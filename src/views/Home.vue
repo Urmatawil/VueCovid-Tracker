@@ -1,12 +1,14 @@
 <template>
 	<main
-		class="flex flex-col align-center justify-center text-center"
+		class="flex flex-col align-center justify-center text-center text-items-center"
 		v-if="!loading"
 	>
 		<div class="text-gray-600 text-2xl mt-10 mb-6">
 			<DataTitle :text="title" :dataDate="dataDate" />
 			<DataBoxes :stats="stats" />
 		</div>
+
+		<CountrySelect :countries="countries" />
 	</main>
 
 	<main class="flex flex-col align-center justify-center text-center" v-else>
@@ -20,6 +22,7 @@
 <script>
 	import DataTitle from "@/components/DataTitle";
 	import DataBoxes from "@/components/DataBoxes";
+	import CountrySelect from "@/components/CountrySelect";
 
 	// @ is an alias to /src
 	export default {
@@ -27,6 +30,7 @@
 		components: {
 			DataTitle,
 			DataBoxes,
+			CountrySelect,
 		},
 		data() {
 			return {
